@@ -1,6 +1,9 @@
 package com.nikstep;
 
-import com.nikstep.helpers.arrays.ArrayInt;
+import com.nikstep.aprl15.Animal;
+import com.nikstep.aprl15.Fish;
+import com.nikstep.aprl15.HomeAnimal;
+import com.nikstep.aprl15.WaterFowl;
 import com.nikstep.oop.*;
 
 import java.util.ArrayList;
@@ -8,7 +11,60 @@ import java.util.Random;
 
 public class Main {
 
+    /**
+     * работа за 15 апреля
+     */
     public static void main(String[] args) {
+        Fish f = new Fish("Фреди");
+        System.out.println("Класс переменной f: " + f.getClass());
+        if(f instanceof HomeAnimal) {
+            System.out.println(" Но он еще и домажнее животное");
+        }
+        if(f instanceof Animal) {
+            System.out.println(" Но он еще и животное");
+        }
+        if(f instanceof WaterFowl){
+            f.toSwim();
+        }
+
+        System.out.println(f);
+    }
+
+
+    public void arpl15_1(){
+        // Поддержка анонимных классов, когда на основе класса прямо в коде создается наследник
+        // Внимание!!! экземпляр класса будет наследником от животного, а не животным!!!
+        Animal cobra = new Animal(" Ее кобра") {
+
+            /**
+             * Реализация абстрактной функции - без которой не возможно сщуествование животного
+             */
+            @Override
+            public void doEat() {
+                System.out.println(" Кобра ест мышек ");
+                hood();
+            }
+
+            // Создали метод
+            // Вызвать в прямую описанный в анонимном классе метод не представляется возможным
+            // поскольку мы не сможем обратиться к обьекту как к сущности. У этой сщуности нет класса
+            public void hood(){
+                System.out.println(" У кобры есть капюшон, и он только у нее");
+            }
+        };
+
+        System.out.println("Класс переменной кобра: " + cobra.getClass());
+        cobra.doEat();
+
+        // невозможно создать экземпляр абстрактного класса
+        // Animal a = new Animal("Просто животное");
+    }
+
+    /**
+     * Работа за 13 апреля
+     * @param args
+     */
+    public static void main13(String[] args) {
         Random rnd = new Random();
 
         ArrayList<Gamer> lstPlayers = new ArrayList<>();
