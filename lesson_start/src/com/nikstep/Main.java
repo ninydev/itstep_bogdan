@@ -1,13 +1,11 @@
 package com.nikstep;
 
-import com.nikstep.aprl15.Animal;
-import com.nikstep.aprl15.Fish;
-import com.nikstep.aprl15.HomeAnimal;
-import com.nikstep.aprl15.WaterFowl;
+import com.nikstep.aprl15.*;
 import com.nikstep.oop.*;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -15,6 +13,36 @@ public class Main {
      * работа за 15 апреля
      */
     public static void main(String[] args) {
+        ArrayList<Animal> myAnimals = new ArrayList<>();
+        System.out.print(" Сколько у вас домашних животных: ");
+        Scanner in = new Scanner(System.in);
+        int count = in.nextInt();
+        Random rnd = new Random();
+        int r;
+        for( int i =0; i < count; i++) {
+            r = rnd.nextInt(2);
+            switch (r){
+                case 1:
+                    myAnimals.add(new Fish(" Рыбка " + i));
+                    break;
+                case 2:
+                    myAnimals.add(new Triton(" Тритон " + i));
+                    break;
+            }
+            /*
+            if () {} else if() {} .... else {}
+             */
+        }
+
+        System.out.println(" В моем зоопарке: ");
+        for (int i = 0; i < myAnimals.size(); i++) {
+            System.out.println(myAnimals.get(i));
+        }
+
+
+    }
+
+    public void aprl15_2(){
         Fish f = new Fish("Фреди");
         System.out.println("Класс переменной f: " + f.getClass());
         if(f instanceof HomeAnimal) {
