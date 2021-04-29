@@ -12,7 +12,7 @@ import com.nikstep.repository.GroupRepository;
 
 import java.util.Scanner;
 
-public class Deanery implements Runnable {
+public class DeaneryController implements Runnable {
     Scanner in = new Scanner(System.in);
     /**
      * Точка входа в деканат
@@ -35,11 +35,22 @@ public class Deanery implements Runnable {
                 case 4:
                     deleteGroup();
                     break;
+                case 5:
+                    editGroup();
+                    break;
                 default:
                     System.out.println(" Я не понял важу команду \n\n");
             }
         }
 
+    }
+
+    private void editGroup() {
+        System.out.print(" Какую группу открыть: ");
+        int num = in.nextInt();
+        in.nextLine();
+        GroupController g = new GroupController(num);
+        g.run();
     }
 
     private void updateGroup() {
@@ -80,16 +91,17 @@ public class Deanery implements Runnable {
 
     /**
      * Центральное меню пользователя
-     * @return
+     * @return выбор пользователя
      */
     private int showMenu(){
         int res = 0;
 
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("1 - (C) создать группу ");
         System.out.println("2 - (R) посомтреть все группы");
         System.out.println("3 - (U) отредактировать группу ");
         System.out.println("4 - (D) удалить группу");
+        System.out.println("5 - (E) редактировать студентов в группе");
         System.out.println("-------------------------");
         System.out.println("0 - выйти из программы");
         System.out.print("Введите команду: ");

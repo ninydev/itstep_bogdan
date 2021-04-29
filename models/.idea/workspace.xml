@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd71c385-b6d3-402d-b8d2-8fd86c6aabb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nikstep/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nikstep/controller/Deanery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nikstep/entity/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nikstep/entity/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nikstep/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nikstep/repository/GroupRepository.java" afterDir="false" />
+    <list default="true" id="bd71c385-b6d3-402d-b8d2-8fd86c6aabb9" name="Default Changelist" comment="базовое приложение для работы с моделями">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nikstep/controller/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nikstep/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikstep/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nikstep/controller/Deanery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikstep/controller/DeaneryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,8 +138,16 @@
       <updated>1619610825181</updated>
       <workItem from="1619610826464" duration="5515000" />
       <workItem from="1619622549903" duration="44000" />
-      <workItem from="1619695436457" duration="3571000" />
+      <workItem from="1619695436457" duration="6075000" />
     </task>
+    <task id="LOCAL-00001" summary="базовое приложение для работы с моделями">
+      <created>1619699055437</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619699055437</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,5 +164,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="базовое приложение для работы с моделями" />
+    <option name="LAST_COMMIT_MESSAGE" value="базовое приложение для работы с моделями" />
   </component>
 </project>

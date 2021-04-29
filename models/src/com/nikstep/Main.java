@@ -8,7 +8,7 @@ package com.nikstep;
  Виключити можливість додавання одного й того ж студента декілько разів у групу.
  */
 
-import com.nikstep.controller.Deanery;
+import com.nikstep.controller.DeaneryController;
 import com.nikstep.entity.Group;
 import com.nikstep.entity.Student;
 import com.nikstep.repository.GroupRepository;
@@ -27,7 +27,7 @@ public class Main {
         GroupRepository.getInstance().create(new Group("qqq"));
         GroupRepository.getInstance().create(new Group("aaa"));
 
-        Deanery d = new Deanery();
+        DeaneryController d = new DeaneryController();
         d.run();
 
 
