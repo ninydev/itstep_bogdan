@@ -9,10 +9,14 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void main(String[] args){
+
+    }
+
     /**
      * работа за 15 апреля
      */
-    public static void main(String[] args) {
+    public static void main_aprl_15(String[] args) {
         ArrayList<Animal> myAnimals = new ArrayList<>();
         System.out.print(" Сколько у вас домашних животных: ");
         Scanner in = new Scanner(System.in);
