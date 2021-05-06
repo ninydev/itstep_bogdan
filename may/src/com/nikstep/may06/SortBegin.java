@@ -7,11 +7,22 @@ public class SortBegin implements Runnable {
 
     @Override
     public void run() {
-        buildTree();
+        buildTreePerson();
     }
 
+    public void buildTreePerson(){
+        PersonComparator personComparator = new PersonComparator();
+        TreeSet<Person> persons = new TreeSet<>(personComparator);
 
-    public void buildTree(){
+        persons.add(new Person("Vasya", 30,30));
+        persons.add(new Person("Petya", 40,30));
+
+        for ( Person s: persons) {
+            System.out.println(s);
+        }
+    }
+
+    public void buildTreeStudent(){
         TreeSet<Student> students = new TreeSet<>();
 
         students.add(new Student("Vasya", 30,30));
@@ -20,7 +31,6 @@ public class SortBegin implements Runnable {
         for ( Student s: students) {
             System.out.println(s);
         }
-
     }
 
 

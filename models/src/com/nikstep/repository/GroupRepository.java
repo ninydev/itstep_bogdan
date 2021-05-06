@@ -7,7 +7,10 @@ package com.nikstep.repository;
 
 
 import com.nikstep.entity.Group;
+import com.nikstep.entity.Student;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -58,6 +61,25 @@ public class GroupRepository {
             System.out.println("!!! Error !!!: \n" + ex.getMessage());
         }
     }
+
+    public void SortWeight(){
+
+        for(int i = 0; i < data.size(); i++){
+            Collections.sort(this.data.get(i).students, new Comparator<Student>() {
+                public int compare( Student o1, Student o2) {
+                    if (o1.weight < o2.weight) return -1;
+                    if (o1.weight > o2.weight) return 1;
+                    return 0;
+                }
+            });
+        }
+
+
+
+
+    }
+
+
 
 
 
