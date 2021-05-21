@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd71c385-b6d3-402d-b8d2-8fd86c6aabb9" name="Default Changelist" comment="базовое приложение для работы с моделями">
-      <change afterPath="$PROJECT_DIR$/../may/src/com/nikstep/may06/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../may/src/com/nikstep/may06/PersonComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../may/src/com/nikstep/may06/SortBegin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../may/src/com/nikstep/may06/SortBegin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikstep/entity/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikstep/entity/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikstep/repository/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikstep/repository/GroupRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd71c385-b6d3-402d-b8d2-8fd86c6aabb9" name="Default Changelist" comment="базовое приложение для работы с моделями" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,6 +123,7 @@
       <workItem from="1619622549903" duration="44000" />
       <workItem from="1619695436457" duration="6098000" />
       <workItem from="1620300181352" duration="2282000" />
+      <workItem from="1620491199182" duration="316000" />
     </task>
     <task id="LOCAL-00001" summary="базовое приложение для работы с моделями">
       <created>1619699055437</created>
