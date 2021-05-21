@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelead.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Genre Index </h1>
+<a href="/admin/genre/create"> Add </a>
+<table>
+    <tbody th:each="genre : ${genres}">
+    <tr>
+        <td th:text="${genre.name}"></td>
+        <td>
+            <a th:href="@{/admin/genre/update/{id}(id=${genre.id})}"
+               th:text="@{update {id}(id=${genre.id})}"
+            />
+        </td>
+        <td>
+            <a th:href="@{/admin/genre/delete/{id}(id=${genre.id})}"
+               th:text="@{del {id}(id=${genre.id})}"
+            />
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
