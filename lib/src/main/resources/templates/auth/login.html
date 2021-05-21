@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Log in with your account</title>
+</head>
+
+<body>
+
+<div>
+  <form method="POST" action="/user/login">
+    <h2>Вход в систему</h2>
+    <div>
+      <input name="username" type="text" placeholder="Username"
+             autofocus="true"/>
+      <input name="password" type="password" placeholder="Password"/>
+      <button type="submit">Log In</button>
+      <h4><a href="/user/registration">Зарегистрироваться</a></h4>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

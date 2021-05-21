@@ -1,5 +1,6 @@
 package com.bogdan.lib.entity;
 
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 
 @Entity
+@Data
 public class Role implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
