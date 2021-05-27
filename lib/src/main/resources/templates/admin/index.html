@@ -31,38 +31,8 @@
                         <a href="/admin/genre" class="btn btn-default"> Genre </a>
                         <a href="/admin/book" class="btn btn-default"> Book </a>
                     </div>
+                    <h1> Admin </h1>
 
-                    <div>
-                        <a rel="tooltip" title="Add" href="/admin/genre/create" class="link_add">
-                            <i class="fa fa-plus "></i>
-                        </a>
-                    </div>
-
-                    <table id="fresh-table" class="table">
-                        <thead>
-                        <th data-field="id">ID</th>
-                        <th data-field="name" data-sortable="true">Name</th>
-                        <th data-field="myActions">Actions</th>
-                        </thead>
-
-                        <tbody th:each="genre : ${genres}">
-                        <tr>
-                            <td th:text="${genre.id}"></td>
-                            <td th:text="${genre.name}"></td>
-                            <td>
-                                <a rel="tooltip" title="Edit" class="table-action edit"
-                                   th:href="@{/admin/genre/update/{id}(id=${genre.id})}">
-                                <i class="fa fa-edit"></i>
-                                </a>
-                                <a rel="tooltip" title="Remove" class="table-action remove"
-                                   th:href="@{/admin/genre/delete/{id}(id=${genre.id})}">
-                                <i class="fa fa-remove"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        </tbody>
-
-                    </table>
                 </div>
 
 
@@ -77,5 +47,4 @@
 <script type="text/javascript" src="/public/assets/admin/js/bootstrap-table.js"></script>
 
 <script type="text/javascript" src="/public/assets/admin/js/myadmin.js"></script>
-
 </html>
