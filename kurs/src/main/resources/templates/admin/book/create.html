@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymelead.org">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/assets/admin/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Admin</title>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+
+    <link href="/public/assets/admin/css/bootstrap.css" rel="stylesheet" />
+    <link href="/public/assets/admin/assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <div class="fresh-table full-color-orange">
+
+                    <div class="toolbar">
+                        <a href="/admin/author" class="btn btn-default"> Author </a>
+                        <a href="/admin/genre" class="btn btn-default"> Genre </a>
+                        <a href="/admin/book" class="btn btn-default"> Book </a>
+                    </div>
+                    <h1> Book Create </h1>
+                    <form method="post" action="/admin/book/create">
+                        <div>
+                            <input type="text" placeholder="Book name" name="name">
+                        </div>
+                        <div>
+                            <select name="genre_ids" multiple>
+                                <option th:each="genre : ${genres}"
+                                    th:value="${genre.id}"
+                                    th:utext="${genre.name}"/>
+                            </select>
+                        </div>
+
+                        <div>
+                            <select name="author_ids" multiple>
+                                <option th:each="author : ${authors}"
+                                        th:value="${author.id}"
+                                        th:utext="${author.name}"/>
+                            </select>
+                        </div>
+
+                        <input type="submit" value="Create">
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="/public/assets/admin/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/public/assets/admin/js/bootstrap.js"></script>
+<script type="text/javascript" src="/public/assets/admin/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="/public/assets/admin/js/myadmin.js"></script>
+</html>
