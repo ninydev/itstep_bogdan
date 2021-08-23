@@ -1,4 +1,4 @@
-package com.bogdan.lib.entity;
+package com.bogdan.kurs.entity;
 
 import lombok.Data;
 

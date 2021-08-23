@@ -1,7 +1,6 @@
-package com.bogdan.lib.repository;
+package com.bogdan.kurs.repository;
 
-import com.bogdan.lib.entity.Author;
-import com.bogdan.lib.entity.Genre;
+import com.bogdan.kurs.entity.Genre;
 import org.springframework.data.repository.CrudRepository;
 
 public interface GenreRepository extends CrudRepository<Genre, Long> {

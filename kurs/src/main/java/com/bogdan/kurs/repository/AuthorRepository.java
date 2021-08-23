@@ -1,6 +1,6 @@
-package com.bogdan.lib.repository;
+package com.bogdan.kurs.repository;
 
-import com.bogdan.lib.entity.Author;
+import com.bogdan.kurs.entity.Author;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AuthorRepository extends CrudRepository<Author, Long> {
