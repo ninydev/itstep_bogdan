@@ -1,12 +1,9 @@
 package com.bogdan.kurs.controller.admin;
 
-import com.bogdan.kurs.entity.Author;
 import com.bogdan.kurs.entity.Book;
-import com.bogdan.kurs.entity.Genre;
 import com.bogdan.kurs.repository.AuthorRepository;
 import com.bogdan.kurs.repository.BookRepository;
 import com.bogdan.kurs.repository.GenreRepository;
-import com.sun.xml.bind.v2.runtime.reflect.Lister;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 public class AdminBookController {
@@ -51,19 +45,23 @@ public class AdminBookController {
     @PostMapping("/admin/book/create")
     public RedirectView create(
             @RequestParam(value = "name") String name,
-            @RequestParam(value = "genre_ids") long[] genre_ids,
-            @RequestParam(value = "author_ids") long[] author_ids
+            @RequestParam(value = "genre_ids", required = false) long[] genre_ids,
+            @RequestParam(value = "author_ids", required = false) long[] author_ids
     ){
         Book newBook = new Book();
         newBook.setName(name);
-        newBook.setAuthors(authorRepository.findAllById(author_ids));
-        newBook.setGenres(genreRepository.findAllById(genre_ids));
+
+        if (author_ids != null)
+            newBook.setAuthors(authorRepository.findAllById(author_ids));
+        if (genre_ids != null)
+            newBook.setGenres(genreRepository.findAllById(genre_ids));
 
 
         bookRepository.save(newBook);
 
 
         // Проверяю, что пришло
+        /*
         System.out.println("Incoming Data:");
 
         System.out.println("Incoming genres:");
@@ -73,15 +71,7 @@ public class AdminBookController {
         System.out.println("Incoming data:");
         for (int i = 0; i < author_ids.length; i++)
             System.out.println(author_ids[i]);
-
-
-        // newBook.setAuthors(authorRepository.findAllById(author_ids));
-        // newBook.setGenres(genreRepository.findAllById(genre_ids));
-
-
-        // Author a = new Author();
-        // a.setName(name);
-        // authorRepository.save(a);
+         */
 
         RedirectView redirect= new RedirectView();
         redirect.setUrl("/admin/book/");
@@ -101,20 +91,60 @@ public class AdminBookController {
     public String update(
             @PathVariable(value = "id") Long id,
             Model model){
+
+
+
         model.addAttribute("book", bookRepository.findById(id));
+
+        model.addAttribute("bookG",bookRepository.findById(id).get().getGenres() );
+        model.addAttribute("bookA",bookRepository.findById(id).get().getAuthors() );
+
+        model.addAttribute("authors", authorRepository.findAll());
+        model.addAttribute("genres", genreRepository.findAll());
+
         return "admin/book/update";
     }
 
     @PostMapping("/admin/book/update")
     public RedirectView update(
-            @RequestParam(value = "id") Long id,
-            @RequestParam(value = "name") String name
+            @RequestParam(value = "id") long id,
+            @RequestParam(value = "name") String name,
+            @RequestParam(value = "genre_ids", required = false) long[] genre_ids,
+            @RequestParam(value = "author_ids", required = false) long[] author_ids
     ){
 
-        //  System.out.println("name" + name);
-        Author a = authorRepository.findById(id).get();
-        a.setName(name);
-        authorRepository.save(a);
+        System.out.println("name" + name);
+        System.out.println("id" + id);
+        Book b = bookRepository.findById(id).get();
+        b.setName(name);
+
+
+
+        System.out.println("New name" + b.getName());
+        System.out.println("Old id" + b.getId());
+
+        if (author_ids != null)
+            b.setAuthors(authorRepository.findAllById(author_ids));
+        if (genre_ids != null)
+            b.setGenres(genreRepository.findAllById(genre_ids));
+
+
+        bookRepository.save(b);
+
+
+        // Проверяю, что пришло
+        /*
+        System.out.println("Incoming Data:");
+
+        System.out.println("Incoming genres:");
+        for (int i = 0; i < genre_ids.length; i++)
+            System.out.println(genre_ids[i]);
+
+        System.out.println("Incoming data:");
+        for (int i = 0; i < author_ids.length; i++)
+            System.out.println(author_ids[i]);
+         */
+
 
         RedirectView redirect= new RedirectView();
         redirect.setUrl("/admin/book");
@@ -125,7 +155,7 @@ public class AdminBookController {
     //* Delete
     @GetMapping("/admin/book/delete/{id}")
     public RedirectView delete(
-            @PathVariable(value = "id") Long id){
+            @PathVariable(value = "id") long id){
         bookRepository.deleteById(id);
         RedirectView redirect= new RedirectView();
         redirect.setUrl("/admin/book");

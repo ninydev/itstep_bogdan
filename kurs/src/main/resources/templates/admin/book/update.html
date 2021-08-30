@@ -31,11 +31,41 @@
                         <a href="/admin/genre" class="btn btn-default"> Genre </a>
                         <a href="/admin/book" class="btn btn-default"> Book </a>
                     </div>
-                    <h1> Author Update </h1>
-                    <form method="post" action="/admin/author/update">
-                        <input type="hidden" name="id" th:field="${genre.id}">
-                        <input type="text" placeholder="Genre name" name="name" th:field="${genre.name}">
+                    <h1> Book Update </h1>
+                    <form method="post" action="/admin/book/update">
+                        <input type="hidden" name="id" th:field="${book.id}">
+                        <input type="text" placeholder="Book name" name="name" th:field="${book.name}">
+
+
+                        <ul>
+                            <li th:each="genre : ${bookG}"
+                                    th:text="${genre.name}"/>
+                        </ul>
+
+                        <ul>
+                            <li th:each="author : ${bookA}"
+                                th:text="${author.name}"/>
+                        </ul>
+                        <div>
+                            <select name="genre_ids" multiple>
+                                <option th:each="genre : ${genres}"
+                                        th:value="${genre.id}"
+                                        th:selected="${bookG.contains(genre)}"
+                                        th:utext="${genre.name}"/>
+                            </select>
+                        </div>
+
+                        <div>
+                            <select name="author_ids" multiple>
+                                <option th:each="author : ${authors}"
+                                        th:value="${author.id}"
+                                        th:selected="${bookA.contains(author)}"
+                                        th:utext="${author.name}"/>
+                            </select>
+                        </div>
+
                         <input type="submit" value="Update">
+
                     </form>
 
                 </div>

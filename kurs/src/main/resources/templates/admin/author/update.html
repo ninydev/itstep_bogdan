@@ -33,8 +33,8 @@
                     </div>
                     <h1> Author Update </h1>
                     <form method="post" action="/admin/author/update">
-                        <input type="hidden" name="id" th:field="${genre.id}">
-                        <input type="text" placeholder="Genre name" name="name" th:field="${genre.name}">
+                        <input type="hidden" name="id" th:field="${author.id}">
+                        <input type="text" placeholder="author name" name="name" th:field="${author.name}">
                         <input type="submit" value="Update">
                     </form>
 
