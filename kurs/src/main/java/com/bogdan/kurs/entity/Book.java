@@ -3,6 +3,7 @@ package com.bogdan.kurs.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,7 +21,7 @@ public class Book {
             joinColumns = {@JoinColumn(name="book_id")},
             inverseJoinColumns = {@JoinColumn(name="author_id")}
     )
-    private Set<Author> authors;
+    private List<Author> authors;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
@@ -28,7 +29,7 @@ public class Book {
             joinColumns = {@JoinColumn(name="book_id")},
             inverseJoinColumns = {@JoinColumn(name="genre_id")}
     )
-    private Set<Genre> genres;
+    private List<Genre> genres;
 
 
 

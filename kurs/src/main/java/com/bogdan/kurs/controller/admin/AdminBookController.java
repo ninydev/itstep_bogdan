@@ -19,6 +19,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class AdminBookController {
@@ -50,19 +51,28 @@ public class AdminBookController {
     @PostMapping("/admin/book/create")
     public RedirectView create(
             @RequestParam(value = "name") String name,
-            @RequestParam(value = "genre_ids") int[] genre_ids,
-            @RequestParam(value = "author_ids") int[] author_ids
+            @RequestParam(value = "genre_ids") long[] genre_ids,
+            @RequestParam(value = "author_ids") long[] author_ids
     ){
         Book newBook = new Book();
         newBook.setName(name);
+        newBook.setAuthors(authorRepository.findAllById(author_ids));
+        newBook.setGenres(genreRepository.findAllById(genre_ids));
+
 
         bookRepository.save(newBook);
 
-        for (int i = 0; i < genre_ids.length; i++)
-            System.out.write(genre_ids[i]);
 
+        // Проверяю, что пришло
+        System.out.println("Incoming Data:");
+
+        System.out.println("Incoming genres:");
+        for (int i = 0; i < genre_ids.length; i++)
+            System.out.println(genre_ids[i]);
+
+        System.out.println("Incoming data:");
         for (int i = 0; i < author_ids.length; i++)
-            System.out.write(author_ids[i]);
+            System.out.println(author_ids[i]);
 
 
         // newBook.setAuthors(authorRepository.findAllById(author_ids));
