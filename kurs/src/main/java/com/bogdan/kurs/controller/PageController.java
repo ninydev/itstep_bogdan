@@ -5,13 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HomeController {
+public class PageController {
 
     @RequestMapping("/")
-    public ModelAndView firstPage() {
-        return new ModelAndView("index");
-    }
-
+    public ModelAndView homePage() {return new ModelAndView("index");}
     @RequestMapping("/about")
     public ModelAndView aboutPage() {
         return new ModelAndView("about");
